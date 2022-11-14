@@ -10,7 +10,7 @@
 # Assumption: Electric Vehicles are charged using electricity generated from various power sources, so the CO2 emitted from electric vehicles is equivalent to the CO2 emitted from the average of all power sources used to generate the electricity
 import pandas as pd
 
-electricity_and_co2_by_source = pd.read_csv("Data/ElectrityAndCO2EmissionsBySource.csv")
+electricity_and_co2_by_source = pd.read_csv("Data/PowerAndCO2EmissionsBySource.csv")
 # Renewable energy sources generate no CO2 emissions
 # Assumption: Nuclear generates no CO2, ignoring possible emissions during supplies extraction for simplicity
 # Assumption: The plants that are the source of biomass for energy capture almost the same amount of CO2 through photosynthesis while growing as is released when biomass is burned, which can make biomass a carbon-neutral energy source: https://www.eia.gov/energyexplained/biomass/biomass-and-the-environment.php
@@ -50,7 +50,7 @@ lbs_per_kwh["Other gases"] = lbs_per_kwh["Natural Gas"]
 lbs_per_kwh["Other sources"] = sum([lbs_per_kwh[fossil_fuel] for fossil_fuel in ["Coal", "Natural Gas", "Petroleum"]])/3
 
 
-electricity_generation_by_source = pd.read_csv("Data/ElectricityGenerationBySource.csv")
+electricity_generation_by_source = pd.read_csv("Data/PowerGenerationBySource.csv")
 fuel_sources = ["Natural Gas", "Coal", "Petroleum", "Other gases", "Nuclear", "Wind", "Hydropower", "Solar", "Biomass", "Geothermal", "Other sources"]
 percent_electricity_generation = {}
 for fuel_source in fuel_sources:
@@ -64,12 +64,12 @@ us_avg_lbs_per_kwh = round(us_avg_lbs_per_kwh, 3)
 
 
 if __name__ == "__main__":
-    print("Fuel Source : Percent Total US Electricity Generation")
+    print("Fuel Source : Percent Total US Power Generation")
     for fuel_source, peg in percent_electricity_generation.items():
         print(f"{fuel_source} : {round(peg*100, 3)}%")
     print("\n")
 
-    print("Fuel Source : CO2 (lbs) emitted in generating 1 kWh of electricity")
+    print("Fuel Source : CO2 (lbs) emitted in generating 1 kWh of power")
     for fuel_source, lbs_kwh in lbs_per_kwh.items():
         if lbs_kwh == 0:
             print(f"{fuel_source} : Carbon Neutral")
@@ -77,4 +77,4 @@ if __name__ == "__main__":
             print(f"{fuel_source} : {round(lbs_kwh, 3)} lbs CO2/kWh")
     print("\n")
 
-    print(f"CO2 emissions in the US to generate 1 kWh of electricity: {us_avg_lbs_per_kwh} lbs, averaged among all energy production sources")
+    print(f"CO2 emissions in the US to generate 1 kWh of power: {us_avg_lbs_per_kwh} lbs, averaged among all energy production sources")
