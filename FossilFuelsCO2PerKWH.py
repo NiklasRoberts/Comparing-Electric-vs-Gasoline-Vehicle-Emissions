@@ -29,3 +29,6 @@ petroleum_electricity_generation = int(petroleum["Electricity Generation (millio
 petroleum_CO2_produced = int(petroleum["CO2 Emissions (million US tons)"])
 # Unit: lbs/kWh
 lbs_per_kwh["Petroleum"] = round((petroleum_CO2_produced*2000)/petroleum_electricity_generation, 3)
+
+if __name__ == "__main__":
+    print(lbs_per_kwh)
