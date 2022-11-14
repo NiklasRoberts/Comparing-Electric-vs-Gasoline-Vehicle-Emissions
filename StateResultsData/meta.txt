@@ -1,0 +1,2 @@
+LBS_CO2_PER_KWH measures the CO2 Emissions in lbs emitted from generating 1 kWh of power
+All other columns measure the given power source's percentage of the state's total power supply

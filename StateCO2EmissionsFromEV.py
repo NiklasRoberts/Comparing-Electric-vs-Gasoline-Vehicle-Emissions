@@ -65,16 +65,16 @@ for state in states:
 
 
 if __name__ == "__main__":
-    output_df.to_csv("StateEmissionsAndEnergySupplyPercentages/AllStates.csv")
+    output_df.to_csv("StateResultsData/AllStates.csv")
 
     sorted_df = output_df.sort_values("LBS_CO2_PER_KWH")
-    sorted_df.to_csv("StateEmissionsAndEnergySupplyPercentages/OrderedByEmissions.csv")
+    sorted_df.to_csv("StateResultsData/OrderedByEmissions.csv")
 
     states_with_less_emissions = sorted_df.drop(sorted_df[sorted_df["LBS_CO2_PER_KWH"] > avg_ICE_CO2_per_kwh].index)
-    states_with_less_emissions.to_csv("StateEmissionsAndEnergySupplyPercentages/StatesWithLessEmissionsThanICE.csv")
+    states_with_less_emissions.to_csv("StateResultsData/StatesWithLessEmissionsThanICE.csv")
 
     states_with_more_emissions = sorted_df.drop(sorted_df[sorted_df["LBS_CO2_PER_KWH"] <= avg_ICE_CO2_per_kwh].index)
-    states_with_more_emissions.to_csv("StateEmissionsAndEnergySupplyPercentages/StatesWithMoreEmissionsThanICE.csv")
+    states_with_more_emissions.to_csv("StateResultsData/StatesWithMoreEmissionsThanICE.csv")
 
 
 
