@@ -1,13 +1,3 @@
-# EIA considers electricity generation from biomass, hydro, solar, and wind to be carbon neutral.
-# https://www.eia.gov/tools/faqs/faq.php?id=74&t=11
-
-# Unlike fossil fuel-fired power plants, nuclear reactors do not produce air pollution or carbon dioxide while operating. However, the processes for mining and refining uranium ore and making reactor fuel all require large amounts of energy. Nuclear power plants also have large amounts of metal and concrete, which require large amounts of energy to manufacture. If fossil fuels are used for mining and refining uranium ore, or if fossil fuels are used when constructing the nuclear power plant, then the emissions from burning those fuels could be associated with the electricity that nuclear power plants generate.
-# https://www.eia.gov/energyexplained/nuclear/nuclear-power-and-the-environment.php
-
-# U.S. electric utility and independent power electricity generation and resulting CO2 emissions by fuel in 2020
-# https://www.eia.gov/tools/faqs/faq.php?id=74&t=11
-
-# Assumption: Electric Vehicles are charged using electricity generated from various power sources, so the CO2 emitted from electric vehicles is equivalent to the CO2 emitted from the average of all power sources used to generate the electricity
 import pandas as pd
 import FossilFuelsCO2PerKWH
 from copy import deepcopy
@@ -17,14 +7,16 @@ EV_lbs_per_kwh = deepcopy(FossilFuelsCO2PerKWH.lbs_per_kwh)
 
 # Renewable energy sources generate no CO2 emissions
 # Assumption: Nuclear generates no CO2, ignoring possible emissions during supplies extraction for simplicity
-# Assumption: The plants that are the source of biomass for energy capture almost the same amount of CO2 through photosynthesis while growing as is released when biomass is burned, which can make biomass a carbon-neutral energy source: https://www.eia.gov/energyexplained/biomass/biomass-and-the-environment.php
-for renewable in ["Nuclear", "Wind", "Hydropower", "Solar", "Biomass", "Geothermal"]:
+# Assumption: The plants that are the source of biomass for energy capture almost the same amount of CO2 through photosynthesis while growing as is released when biomass is burned, which can make biomass a carbon-neutral energy source
+for renewable in ["Nuclear", "Wind", "Hydropower", "Solar", "Biomass", ]:
     EV_lbs_per_kwh[renewable] = 0
 
 # Assumption: "Other gases" generate same emissions as natural gases
 EV_lbs_per_kwh["Other gases"] = EV_lbs_per_kwh["Natural Gas"]
 # Assumption: "Other sources" generates emissions equivalent to the average of all other fossil fuel sources
 EV_lbs_per_kwh["Other sources"] = sum([EV_lbs_per_kwh[fossil_fuel] for fossil_fuel in ["Coal", "Natural Gas", "Petroleum"]])/3
+# Assumption: "Geothermal" generates approximately 1% of fossil fuel emissions
+EV_lbs_per_kwh["Geothermal"] = EV_lbs_per_kwh["Other sources"]/100
 
 
 ### Compute average CO2 emitted per kWh among all power sources

@@ -1,6 +1,7 @@
 import pandas as pd
 import FossilFuelsCO2PerKWH
 from copy import deepcopy
+from plot
 from CO2EmissionsFromICE import avg_lbs_CO2_per_kwh as avg_ICE_CO2_per_kwh
 
 state_EV_lbs_per_kwh = deepcopy(FossilFuelsCO2PerKWH.lbs_per_kwh)
@@ -9,12 +10,13 @@ state_EV_lbs_per_kwh = deepcopy(FossilFuelsCO2PerKWH.lbs_per_kwh)
 state_EV_lbs_per_kwh["Other Gases"] = state_EV_lbs_per_kwh["Natural Gas"]
 # Assumption: "Other" generates emissions equivalent to the average of all other fossil fuel sources
 state_EV_lbs_per_kwh["Other"] = sum([state_EV_lbs_per_kwh[fossil_fuel] for fossil_fuel in ["Coal", "Natural Gas", "Petroleum"]])/3
+# Assumption: "Geothermal" generates approximately 1% of fossil fuel emissions
+state_EV_lbs_per_kwh["Geothermal"] = state_EV_lbs_per_kwh["Other"]/100
 
-# Assumption: "Other Biomass" and "Wood and Wood Derived Fuels" are both considered biomass, which is treated as Carbon Neutral by the EIA: https://www.eia.gov/energyexplained/biomass/biomass-and-the-environment.php
+# Assumption: "Other Biomass" and "Wood and Wood Derived Fuels" are both considered biomass, which is treated as Carbon Neutral by the EIA
 # Renewable energy sources generate no CO2 emissions
 # Assumption: Nuclear generates no CO2, ignoring possible emissions during supplies extraction for simplicity
-
-for renewable in ["Geothermal", "Hydroelectric Conventional", "Solar Thermal and Photovoltaic", "Other Biomass", "Wind", "Wood and Wood Derived Fuels", "Nuclear"]:
+for renewable in ["Hydroelectric Conventional", "Solar Thermal and Photovoltaic", "Other Biomass", "Wind", "Wood and Wood Derived Fuels", "Nuclear"]:
     state_EV_lbs_per_kwh[renewable] = 0
 
 
@@ -75,6 +77,8 @@ if __name__ == "__main__":
 
     states_with_more_emissions = sorted_df.drop(sorted_df[sorted_df["LBS_CO2_PER_KWH"] <= avg_ICE_CO2_per_kwh].index)
     states_with_more_emissions.to_csv("StateResultsData/StatesWithMoreEmissionsThanICE.csv")
+
+
 
 
 

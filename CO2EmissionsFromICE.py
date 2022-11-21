@@ -1,6 +1,5 @@
 # CO2 Emissions from 1 gallon of gasoline can vary depending on the fuel efficiency and car model
 # Assumption: We are comparing EV to traditional ICE using gasoline fuel
-# https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-,A%20typical%20passenger%20vehicle%20emits%20about%204.6%20metric%20tons%20of,8%2C887%20grams%20of%20CO2
 # Average kg CO2 emitted from burning one gallon of gasoline
 avg_kg_CO2_per_gallon_gas = 8.887
 
@@ -9,11 +8,8 @@ lbs_per_kg = 2.205
 avg_lbs_CO2_per_gallon_gas = round(avg_kg_CO2_per_gallon_gas * lbs_per_kg , 3)
 
 # Energy produced from 1 gallon of finished motor gasoline (containing about 10% fuel ethanol by volume), measured in Btu (British Thermal Units)
-# https://www.eia.gov/energyexplained/units-and-calculators/
 avg_btu_per_gallon_gas = 120238
 
-# btu per kWh
-# https://www.eia.gov/energyexplained/units-and-calculators/energy-conversion-calculators.php
 btu_per_kwh = 3412
 
 avg_kwh_per_gallon_gas = round(avg_btu_per_gallon_gas / btu_per_kwh, 3)
