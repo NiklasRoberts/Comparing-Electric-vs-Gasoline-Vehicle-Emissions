@@ -1,7 +1,7 @@
 import pandas as pd
 import FossilFuelsCO2PerKWH
 from copy import deepcopy
-from plot
+import plotly.express as px
 from CO2EmissionsFromICE import avg_lbs_CO2_per_kwh as avg_ICE_CO2_per_kwh
 
 state_EV_lbs_per_kwh = deepcopy(FossilFuelsCO2PerKWH.lbs_per_kwh)
@@ -78,8 +78,31 @@ if __name__ == "__main__":
     states_with_more_emissions = sorted_df.drop(sorted_df[sorted_df["LBS_CO2_PER_KWH"] <= avg_ICE_CO2_per_kwh].index)
     states_with_more_emissions.to_csv("StateResultsData/StatesWithMoreEmissionsThanICE.csv")
 
+    normalized_state_emissions = output_df.copy()
+    normalized_state_emissions["Normalized CO2 Emissions"] = normalized_state_emissions["LBS_CO2_PER_KWH"].apply(lambda x: x - avg_ICE_CO2_per_kwh)
+    normalized_state_emissions["States"] = normalized_state_emissions.index
 
 
+    fig = px.choropleth(normalized_state_emissions,
+                    locations='States', 
+                    locationmode="USA-states", 
+                    scope="usa",
+                    color='Normalized CO2 Emissions',
+                    color_continuous_scale=px.colors.diverging.PRGn_r,
+                    color_continuous_midpoint=0,
+                    title="Normalized CO2 Emissions (lbs CO2/kWh): Electric Vehicle (EV) Emissions Per State - Average Gasoline Vehicle (ICE) Emissions",
+                    width=1200,
+                    height=800,
+                    )
+
+    fig.update_layout( 
+        # customize legend orientation & position
+        legend=dict(
+            title='Normalized CO2 Emissions', orientation = 'h', y=1, yanchor="bottom", x=0.5, xanchor="center"
+        )
+    )
+    
+    fig.write_image("StateResultsData/NormalizedStateEmissions.svg")
 
 
 
