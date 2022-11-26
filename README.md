@@ -5,11 +5,9 @@ Many Electric Vehicle manufacturers deceptively advertise their cars as "emissio
 However, Electic Vehicles rely on the local power grid to charge their batteries, so an EV emits as much CO2 as the local energy generation sources. 
 
 
-In this investigation the emissions from a traditional automobile are compared with the emissions from the US power grid as a whole, as well as each individual state's power grid, revealing that despite popular rhetoric and belief **the average Electric Vehicle in the US emits xx% more Carbon Dioxide than a traditional automobile**. 
+In this investigation the emissions from a traditional automobile are compared with the emissions from the US power grid as a whole, as well as each individual state's power grid, revealing that despite popular rhetoric and belief **the average Electric Vehicle in the US emits 53% more Carbon Dioxide than a traditional automobile**. 
 
-As well, **the average Electric Vehicle emits more Carbon Dioxide than the average traditional automobile in 39 states**.
-
-% chloropleth map
+As well, **the average Electric Vehicle emits less Carbon Dioxide than the average traditional automobile in only 11 states, or 22% of the United States**.
 
 # Methodology
 
@@ -94,20 +92,49 @@ The United States's power supply consists of some combination of Coal, Petroleum
 
 ## Energy Generation Source Data
 
-### United States Power Grid
+* [United States Power Grid](https://www.eia.gov/tools/faqs/faq.php?id=427&t=3) from 2021
 
-Source: https://www.eia.gov/tools/faqs/faq.php?id=427&t=3 from 2021
-
-### State Power Grid
+* [State Power Grid](https://www.eia.gov/electricity/data/state/) from 2021
 
 
 # Analysis:
-An Internal Combustion Engine burning traditional finished motor gasoline emits an average of **0.556 lbs CO2/kWh**
+An Internal Combustion Engine burning traditional finished motor gasoline emits an average of **0.556 lbs CO2/kWh**, while the United States power grid as a whole produces an average of **0.853 lbs CO2/kWh** from various power sources.
+Thus, **the average Electric Vehicle in the US emits 53% more Carbon Dioxide than a traditional automobile**.
 
-The United States power grid as a whole produces an average of **0.853 lbs CO2/kWh** from various power sources.
 
-To see the calculations for average CO2 emissions from an ICE, see CO2EmissionsFromICE.py
+However, no Electric Vehicles are powered from the entire US power grid, rather each vehicle depends on its local power grid. 
 
-To see the calculations for average CO2 emissions from the United States power grid, see TotalCO2EmissionsFromEV.py
+While no Electric Vehicle can ever be truly emissions-free, classifying electricity generation by state helps identify the areas of the country where an Electric Vehicle can live up to the promise of reduced emissions compared to a traditional automobile.
 
-To see the calculations for average CO2 emissions from each state's power grid, see StateCO2EmissionsFromEV.py and StateResultsData/
+<figure>
+<img src=StateResultsData/NormalizedStateEmissions.svg>
+<figcaption align = "center"><b>  </b></figcaption>
+
+</figure>
+
+Only 11 states have power grids which emit less CO2 than the average ICE, all utilizing some combination of nuclear and renewable energy sources.
+
+While New York, New Jersey, and Connecticut all generate at least half of their energy from fossil fuels, however their power grids still emit less CO2 than the average ICE by using nuclear and other renewable energy sources.
+
+Hydroelectric power is closely associated with low CO2 emissions, with 7 of the 9 states generating at least 20% of their energy using Hydroelectric methods emitting less CO2 than the average ICE. 
+
+On the contrary, coal use is closely associated with high CO2 emissions, with 7 of the 8 highest emitting states generating at least 50% of their energy from coal. The only exception is Hawaii which generates 67% of its energy from petroleum, the only state generating at least 15% of its energy using petroleum.
+
+
+# Conclusions
+Despite the audacious claims from the Electric Vehicle industry, EVs are actually only an environmentally friendly alternative to Internal Combustion Vehicles in 11 out of 50 states in the USA, and on average EVs emit significantly more CO2 than ICEs. This is because Electric Vehicles emit as much CO2 as the power grid which supplies them, which is currently 53% more than a traditional ICE.
+
+The problem is not the Electric Vehicles themselves, as technically part of their claims are true. Electric Vehicles do not emit any CO2 while running which, if leveraged properly, could cause them to be an environmentally friendly alternative to traditional Internal Combustion Vehicles. 
+
+
+
+## Options For Continuing Research
+* Integrating small scale photovoltaic systems (household/business solar panels)
+* Applying advanced statistical techniques beyond my current level of knowledge
+* Correlation between fossil fuel reliance and CO2 emissions (compare with ICE threshold and potentially a predictive CNN)
+
+## Source Code
+* To see the calculations for average CO2 emissions from an ICE, see CO2EmissionsFromICE.py
+* To see the calculations for average CO2 emissions from the United States power grid, see TotalCO2EmissionsFromEV.py
+* To see the calculations for average CO2 emissions from each state's power grid, see StateCO2EmissionsFromEV.py and 
+* To see the data and figures for state CO2 emissions, see StateResultsData/
