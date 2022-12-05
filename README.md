@@ -26,6 +26,8 @@ As well, it is assumed that 1 kWh of energy is utilized equally for Electric and
 
 Gasoline used in this investigation is assumed to be a blend of approximately [10% ethanol content by volume](https://www.eia.gov/energyexplained/units-and-calculators/), and ethanol fuel is assumed to [generate equivalent emissions to finished motor gasoline](https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-,A%20typical%20passenger%20vehicle%20emits%20about%204.6%20metric%20tons%20of,8%2C887%20grams%20of%20CO2). 
 
+Battery mining/transportation process and gasoline treatment/transportation are out of the scope of this investigation, and therefore will be ignored.
+
 This investigation does not account for EVs charged by personal solar panels, which would decrease CO2 emissions for a singular vehicle. 
 
 Calculations for ICEs can vary based on a multitude of factors, including make, model, year, size, and type of vehicle. For the purpose of this investigation ICEs will be treated as a singular entity using averages, however if the data were to be gathered then further work could be done to separate the calculations into different vehicle classes.
@@ -140,6 +142,9 @@ The problem is not the Electric Vehicles themselves, as technically part of thei
 * Applying advanced statistical techniques beyond my current level of knowledge
 * Correlation between fossil fuel reliance and CO2 emissions (compare with ICE threshold and potentially a predictive CNN)
 * Increase in energy production required to support increased usage of EVs
+* Percent of EV charging by personal solar panels required to equal ICE emissions per state
+* Incorporate EV battery mining and transportation into emissions model
+* Incorporate gasoline treatment and transportation into emissions model
 
 ## Source Code
 * To see the calculations for average CO2 emissions from an ICE, see CO2EmissionsFromICE.py
