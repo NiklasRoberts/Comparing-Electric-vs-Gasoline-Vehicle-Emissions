@@ -1,19 +1,30 @@
 # A Comparison of the CO2 Emissions From Automobiles Powered by Gasoline vs Electricity
 
+## Abstract
+
 Electric Vehicles are often touted as an environmentally friendly alternative to traditional automobiles which emit Carbon Dioxide (CO2) in the process of burning gasoline. 
 Many Electric Vehicle manufacturers deceptively advertise their cars as "emission-free" because they emit no CO2 in the process of running. 
-However, Electic Vehicles rely on the local power grid to charge their batteries, so an EV emits as much CO2 as the local energy generation sources. 
-
+However, Electic Vehicles rely on their local power grid to charge their batteries, so an EV actually emits as much CO2 as their local energy generation sources. 
 
 In this investigation the emissions from a traditional automobile are compared with the emissions from the US power grid as a whole, as well as each individual state's power grid, revealing that despite popular rhetoric and belief **the average Electric Vehicle in the US emits 53% more Carbon Dioxide than a traditional automobile**. 
 
-As well, **the average Electric Vehicle emits less Carbon Dioxide than the average traditional automobile in only 11 states, or 22% of the United States**.
+As well, **the average Electric Vehicle emits less Carbon Dioxide than the average traditional automobile in only 11 states, or 22% of the United States**. The aforementioned states listed in ascending order by EV emissions are VT, WA, ID, SD, NH, OR, ME, NY, CA, NJ, CT.
+
+Consequently, the United States power grid as it exists currently cannot support the widespread adoption of Electric Vehicles as an environmentally friendly alternative to traditional gasoline powered automobiles, providing just one more reason to continue investing in renewable energy generation nationwide. 
+
+In the meantime, Electric Vehicles should only be promoted in states with less CO2 emissions than the average gasoline powered automobile.
 
 # Methodology
 
 In this investigation, publicly available data from the EIA is used to calculate and compare the amount of Carbon Dioxide (CO2) emitted from an Internal Combustion Engine (ICE) vs the power grid which supplies an Electric Vehicle (EV). 
 
 Power sources will be compared using units of lbs CO2/kWh, measuring the mass of Carbon Dioxide emitted in the process of generating 1 kWh of energy.
+
+Although unrealistic, for the purposes of this investigation a lossless transfer of energy is assumed from the local power grid to Electric Vehicles. 
+
+As well, it is assumed that 1 kWh of energy is utilized equally for Electric and Internal Combustion vehicles.
+
+Gasoline used in this investigation is assumed to be a blend of approximately [10% ethanol content by volume](https://www.eia.gov/energyexplained/units-and-calculators/), and ethanol fuel is assumed to [generate equivalent emissions to finished motor gasoline](https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-,A%20typical%20passenger%20vehicle%20emits%20about%204.6%20metric%20tons%20of,8%2C887%20grams%20of%20CO2). 
 
 This investigation does not account for EVs charged by personal solar panels, which would decrease CO2 emissions for a singular vehicle. 
 
@@ -36,7 +47,7 @@ Such that
 
 ![](Data/ICEequation.png)
 
-### Sources:
+## Sources:
 
 * [CO2 Emissions](https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle#:~:text=typical%20passenger%20vehicle%3F-,A%20typical%20passenger%20vehicle%20emits%20about%204.6%20metric%20tons%20of,8%2C887%20grams%20of%20CO2)
 * [Energy Generation](https://www.eia.gov/energyexplained/units-and-calculators/)
@@ -82,7 +93,7 @@ The United States's power supply consists of some combination of Coal, Petroleum
 | Biomass       | 0                       | Although burning biological fuel emits CO2, the EIA considers biomass to be carbon neutral because of the carbon absorption from biological organisms|
 
 
-### Sources:
+## Sources:
 
 * [Fossil Fuels](https://www.eia.gov/tools/faqs/faq.php?id=74&t=11)
 * [Renewable](https://www.eia.gov/tools/faqs/faq.php?id=74&t=11)
@@ -102,13 +113,13 @@ An Internal Combustion Engine burning traditional finished motor gasoline emits 
 Thus, **the average Electric Vehicle in the US emits 53% more Carbon Dioxide than a traditional automobile**.
 
 
-However, no Electric Vehicles are powered from the entire US power grid, rather each vehicle depends on its local power grid. 
+However no Electric Vehicles are powered from the entire US power grid, rather each vehicle depends on its local power grid. 
 
-While no Electric Vehicle can ever be truly emissions-free, classifying electricity generation by state helps identify the areas of the country where an Electric Vehicle can live up to the promise of reduced emissions compared to a traditional automobile.
+While no Electric Vehicle can ever be truly emission-free, classifying electricity generation by state helps identify the areas of the country where an Electric Vehicle can live up to the promise of reduced emissions compared to a traditional automobile.
 
 <figure>
 <img src=StateResultsData/NormalizedStateEmissions.svg>
-<figcaption align = "center"><b>  </b></figcaption>
+<figcaption align = "center"><b>Difference in CO2 Emissions between an ICE and power grid by state. Electric Vehicles in green states emit less CO2 than a gasoline vehicle, and vice versa in purple states.</b></figcaption>
 
 </figure>
 
@@ -132,6 +143,7 @@ The problem is not the Electric Vehicles themselves, as technically part of thei
 * Integrating small scale photovoltaic systems (household/business solar panels)
 * Applying advanced statistical techniques beyond my current level of knowledge
 * Correlation between fossil fuel reliance and CO2 emissions (compare with ICE threshold and potentially a predictive CNN)
+* Increase in energy production required to support increased usage of EVs
 
 ## Source Code
 * To see the calculations for average CO2 emissions from an ICE, see CO2EmissionsFromICE.py
