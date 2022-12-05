@@ -4,7 +4,7 @@
 
 Electric Vehicles are often touted as an environmentally friendly alternative to traditional automobiles which emit Carbon Dioxide (CO2) in the process of burning gasoline. 
 Many Electric Vehicle manufacturers deceptively advertise their cars as "emission-free" because they emit no CO2 in the process of running. 
-However, Electic Vehicles rely on their local power grid to charge their batteries, so an EV actually emits as much CO2 as their local energy generation sources. 
+However, Electric Vehicles rely on their local power grid to charge their batteries, so an EV actually emits as much CO2 as their local energy generation sources. 
 
 In this investigation the emissions from a traditional automobile are compared with the emissions from the US power grid as a whole, as well as each individual state's power grid, revealing that despite popular rhetoric and belief **the average Electric Vehicle in the US emits 53% more Carbon Dioxide than a traditional automobile**. 
 
@@ -76,7 +76,7 @@ The weighted average of lbs CO2/kWh is calculated for the US as a whole, as well
 
 ## Emissions For Each Energy Source
 
-The United States's power supply consists of some combination of Coal, Petroleum, Natural Gas, Other Gases, Other (various combustion based methods), Solar, Wind, Hydroelectric, Geothermal, and Biomass.
+The United States' power supply consists of some combination of Coal, Petroleum, Natural Gas, Other Gases, Other (various combustion based methods), Solar, Wind, Hydroelectric, Geothermal, and Biomass.
 
 | Energy Source  | Emissions (lbs CO2/kWh) | Explanation                                                                                                                   |
 |---------------|-------------------------|-------------------------------------------------------------------------------------------------------------------------------|
