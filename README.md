@@ -117,11 +117,7 @@ However no Electric Vehicles are powered from the entire US power grid, rather e
 
 While no Electric Vehicle can ever be truly emission-free, classifying electricity generation by state helps identify the areas of the country where an Electric Vehicle can live up to the promise of reduced emissions compared to a traditional automobile.
 
-<figure>
-<img src=StateResultsData/NormalizedStateEmissions.svg>
-<figcaption align = "center"><b>Difference in CO2 Emissions between an ICE and power grid by state. Electric Vehicles in green states emit less CO2 than a gasoline vehicle, and vice versa in purple states.</b></figcaption>
-
-</figure>
+![](StateResultsData/NormalizedStateEmissions.png)
 
 Only 11 states have power grids which emit less CO2 than the average ICE, all utilizing some combination of nuclear and renewable energy sources.
 
