@@ -2,6 +2,11 @@ import pandas as pd
 import FossilFuelsCO2PerKWH
 from copy import deepcopy
 
+# The average electric car kWh per 100 miles (kWh/100 mi) is 34.6.
+# This is based on 231 electric cars, built between 2000 and 2022, and their kWh/100 mi as stated on fueleconomy.gov (the official US government source for fuel economy information).
+# https://ecocostsavings.com/average-electric-car-kwh-per-mile/
+avg_EV_miles_per_kwh = 1/.346
+
 ### Prepare dictionary mapping power source: lbs CO2 emitted per kwh energy generated
 EV_lbs_per_kwh = deepcopy(FossilFuelsCO2PerKWH.lbs_per_kwh)
 
@@ -32,6 +37,8 @@ for fuel_source in fuel_sources:
     us_avg_lbs_per_kwh += EV_lbs_per_kwh[fuel_source] * percent_electricity_generation[fuel_source]
 us_avg_lbs_per_kwh = round(us_avg_lbs_per_kwh, 3)
 
+### Calculate average miles per kwh to measure CO2 emissions per mile
+us_avg_lbs_per_miles = round(us_avg_lbs_per_kwh / avg_EV_miles_per_kwh, 3)
 
 if __name__ == "__main__":
     print("Fuel Source : Percent Total US Power Generation")
@@ -48,3 +55,5 @@ if __name__ == "__main__":
     print("\n")
 
     print(f"CO2 emissions in the US to generate 1 kWh of power: {us_avg_lbs_per_kwh} lbs, averaged among all energy production sources")
+
+    print(f"CO2 emissions in the US to travel 1 mile using the average Electric Vehicle: {us_avg_lbs_per_miles} lbs")

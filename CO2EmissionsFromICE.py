@@ -17,7 +17,14 @@ avg_kwh_per_gallon_gas = round(avg_btu_per_gallon_gas / btu_per_kwh, 3)
 # CO2/kWh = C02/gallon gas * gallon gas/kWh
 avg_lbs_CO2_per_kwh = round(avg_lbs_CO2_per_gallon_gas / avg_kwh_per_gallon_gas, 3)
 
+# Average miles per gallon for cars
+# https://afdc.energy.gov/data/10310
+avg_miles_per_gallon = 24.2
+avg_miles_per_kwh = round(avg_miles_per_gallon / avg_kwh_per_gallon_gas, 3)
+avg_lbs_CO2_per_mile = round(avg_lbs_CO2_per_kwh / avg_miles_per_kwh, 3)
+
 if __name__ == "__main__":
     print(f"Average CO2 emitted from an ICE burning 1 gallon of gasoline: {avg_lbs_CO2_per_gallon_gas} lbs")
     print(f"Average amount of energy generated from 1 gallon of gasoline: {avg_kwh_per_gallon_gas} kWh")
     print(f"Average CO2 emitted per kWh generated from an ICE burning gasoline: {avg_lbs_CO2_per_kwh} lbs")
+    print(f"Average CO2 emitted per mile traveled using an ICE burning gasoline: {avg_lbs_CO2_per_mile} lbs")
