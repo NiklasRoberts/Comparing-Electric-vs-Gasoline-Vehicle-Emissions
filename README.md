@@ -102,6 +102,7 @@ The United States' power supply consists of some combination of Coal, Petroleum,
 * [Geothermal](https://www.eia.gov/energyexplained/geothermal/geothermal-energy-and-the-environment.php)
 * [Nuclear](https://www.eia.gov/energyexplained/nuclear/nuclear-power-and-the-environment.php)
 * [Biomass](https://www.eia.gov/energyexplained/biomass/biomass-and-the-environment.php)
+* 
 
 ## Energy Generation Source Data
 
@@ -146,7 +147,9 @@ The problem is not the Electric Vehicles themselves, as technically part of thei
 * Incorporate EV battery mining and transportation into emissions model
 * Incorporate gasoline treatment and transportation into emissions model
 
-## Source Code
+## Source Code Investigation
+Create and activate a virtual environment, then execute `requirements.sh`
+
 * To see the calculations for average CO2 emissions from an ICE, see CO2EmissionsFromICE.py
 * To see the calculations for average CO2 emissions from the United States power grid, see TotalCO2EmissionsFromEV.py
 * To see the calculations for average CO2 emissions from each state's power grid, see StateCO2EmissionsFromEV.py and 
