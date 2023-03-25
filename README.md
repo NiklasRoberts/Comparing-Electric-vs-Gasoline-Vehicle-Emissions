@@ -34,18 +34,31 @@ Calculations for ICEs can vary based on a multitude of factors, including make, 
 
 # Internal Combustion Engine (ICE)
 
-The average Carbon Dioxide emissions from an ICE per kWh energy produced can be calculated through a series of unit conversions. 
 
-Starting with the two core pieces of input data, let
-* Goal = ICE's CO2 emissions/kWh energy generated
+The average Carbon Dioxide emissions from an ICE per mile driven can be calculated through a series of unit conversions. 
+
+**Goal = ICE's CO2 emissions/Distance Travelled**
+
+Starting with the three core pieces of input data, let
 * A = CO2 emissions (kg)/gallon gasoline
 * B = Energy generation (btu)/gallon gasoline
+* C = Fuel Efficiency (mi)/gallon gasoline
 
 and for unit conversions let
 * x = lbs/kg
 * y = btu/kWh
 
-Such that
+If
+* Alpha = CO2 Emissions per Energy Generated
+![](Data/ICEAlphaEquation.png)
+
+and
+* Beta = Miles Travelled per Energy Generated
+![](Data/ICEBetaEquation.png)
+
+Then
+* **Goal = CO2 Emissions per Mile Travelled**
+![](Data/ICEGoalEquation.png)
 
 ![](Data/ICEequation.png)
 
