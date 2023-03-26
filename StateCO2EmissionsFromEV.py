@@ -79,10 +79,10 @@ if __name__ == "__main__":
     sorted_df = output_df.sort_values("LBS_CO2_PER_KWH")
     sorted_df.to_csv("StateResultsData/OrderedByEmissions.csv")
 
-    states_with_less_emissions_per_mile = sorted_df.drop(sorted_df[sorted_df["LBS_CO2_PER_MILE"] > avg_ICE_CO2_per_mile].index)
+    states_with_less_emissions_per_mile = sorted_df[sorted_df["LBS_CO2_PER_MILE"] < avg_ICE_CO2_per_mile]
     states_with_less_emissions_per_mile.to_csv("StateResultsData/StatesWithLessEmissionsPerMileThanICE.csv")
 
-    states_with_more_emissions_per_mile = sorted_df.drop(sorted_df[sorted_df["LBS_CO2_PER_KWH"] <= avg_ICE_CO2_per_mile].index)
+    states_with_more_emissions_per_mile = sorted_df[sorted_df["LBS_CO2_PER_MILE"] >= avg_ICE_CO2_per_mile]
     states_with_more_emissions_per_mile.to_csv("StateResultsData/StatesWithMoreEmissionsPerMileThanICE.csv")
 
     # Emissions per kwh
@@ -109,6 +109,7 @@ if __name__ == "__main__":
             title='Normalized CO2 Emissions Per kWh', orientation = 'h', y=1, yanchor="bottom", x=0.5, xanchor="center"
         )
     )
+    fig.add_annotation(text="Darker means higher CO2 Emissions", y=0, showarrow=False)
     
     fig.write_image("StateResultsData/NormalizedStateEmissionsPerKWH.png")
 
@@ -135,6 +136,7 @@ if __name__ == "__main__":
             title='Normalized CO2 Emissions Per Mile', orientation = 'h', y=1, yanchor="bottom", x=0.5, xanchor="center"
         )
     )
+    fig.add_annotation(text="Darker means higher CO2 Emissions", y=0, showarrow=False)
     
     fig.write_image("StateResultsData/NormalizedStateEmissionsPerMile.png")
 
