@@ -74,8 +74,15 @@ Underlying this investigation is the assumption that Electric Vehicles are charg
 
 The weighted average of CO2 emissions per kWh of energy generated is calculated from the product of each power source and the percent of total energy supplied.
 
+In order to compare with ICE emissions, the average lbs CO2 emissions per kWh of energy generated is then converted to lbs CO2 emissions per Mile.
+
+## Equations
+
+**Goal = Power grid's CO2 emissions/Mile travelled**
+
+Gamma = Power grid's CO2 emissions/kWh energy generated
+
 Let 
-* Goal = Power grid's CO2 emissions/kWh energy generated
 * S = Energy Sources
 * i = Each energy source
 * C<sub>i</sub> = CO2 emissions (lbs/kWh) for energy source
@@ -83,10 +90,16 @@ Let
 
 Such that
 
-![](Data/EVequation.png)
+![](Data/EVGammaEquation.png)
 
+Then, let
+* M = Average EV efficiency (Mi/kWh)
 
-The weighted average of lbs CO2/kWh is calculated for the US as a whole, as well as each individual state.
+Such that
+
+![](Data/EVGoalEquation.png)
+
+The weighted average of lbs CO2/kWh and lbs CO2/kWh are calculated for the US as a whole, as well as each individual state.
 
 
 ## Emissions For Each Energy Source
