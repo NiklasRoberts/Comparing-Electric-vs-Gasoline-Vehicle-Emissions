@@ -184,3 +184,4 @@ While CO2 emissions vary dramatically among all states, even the states with the
 * Percent of EV charging by personal solar panels required to equal ICE emissions per state
 * Incorporate EV battery mining and transportation into emissions model
 * Incorporate gasoline treatment and transportation into emissions model
+* Compare diesel powered trucking fleets to theoretical EV equivalent
