@@ -109,7 +109,7 @@ if __name__ == "__main__":
             title='Normalized CO2 Emissions Per kWh', orientation = 'h', y=1, yanchor="bottom", x=0.5, xanchor="center"
         )
     )
-    fig.add_annotation(text="Darker means higher CO2 Emissions", y=0, showarrow=False)
+    fig.add_annotation(text="Darker means higher CO2 Emissions, Negative value means EVs emit less than ICE", y=0, showarrow=False)
     
     fig.write_image("StateResultsData/NormalizedStateEmissionsPerKWH.png")
 
@@ -136,7 +136,7 @@ if __name__ == "__main__":
             title='Normalized CO2 Emissions Per Mile', orientation = 'h', y=1, yanchor="bottom", x=0.5, xanchor="center"
         )
     )
-    fig.add_annotation(text="Darker means higher CO2 Emissions", y=0, showarrow=False)
+    fig.add_annotation(text="Darker means higher CO2 Emissions, Negative value means EVs emit less than ICE", y=0, showarrow=False)
     
     fig.write_image("StateResultsData/NormalizedStateEmissionsPerMile.png")
 
